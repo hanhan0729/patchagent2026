@@ -1,0 +1,21 @@
+var1 = -0
+var2 = 1.0
+var3 = 1
+var4 = +0
+var3 = methods.group_by() {
+  || var3 = methods.group_by() {
+    || var3 = methods.group_by() {
+      || var3 = methods.group_by() {
+        || var3 = methods.group_by() {
+          || var3 = methods.group_by() {
+            || var3 = methods.group_by() {
+              || var3 = methods.group_by() {
+                ||
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

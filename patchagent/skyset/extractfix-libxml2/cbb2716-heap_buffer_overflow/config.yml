@@ -1,0 +1,5 @@
+fix_commit: db07dd613e461df93dde7902c6505629bf0734e9
+fix_date: '2016-04-17'
+project: extractfix-libxml2
+sanitizer: AddressSanitizer
+tag: cbb2716-heap_buffer_overflow

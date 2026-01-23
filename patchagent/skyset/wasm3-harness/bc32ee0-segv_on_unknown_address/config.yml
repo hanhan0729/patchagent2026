@@ -1,0 +1,5 @@
+fix_commit: 6bb612ccbfd5f8993a07a99092fab534722df1c3
+fix_date: '2021-05-04'
+project: wasm3-harness
+sanitizer: AddressSanitizer
+tag: bc32ee0-segv_on_unknown_address

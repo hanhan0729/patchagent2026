@@ -1,0 +1,1 @@
+./tools/tiffmedian @POC@ out.tif

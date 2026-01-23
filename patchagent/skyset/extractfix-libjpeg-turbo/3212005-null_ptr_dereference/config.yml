@@ -1,0 +1,5 @@
+fix_commit: 1ecd9a5729d78518397889a630e3534bd9d963a8
+fix_date: '2017-10-02'
+project: extractfix-libjpeg-turbo
+sanitizer: AddressSanitizer
+tag: 3212005-null_ptr_dereference

@@ -1,0 +1,5 @@
+fix_commit: 1a79d783cc791faf12fa9f6f6f92c26fb8be4967
+fix_date: '2021-03-13'
+project: c-blosc2
+sanitizer: AddressSanitizer
+tag: 4f6d42a-invalid_free

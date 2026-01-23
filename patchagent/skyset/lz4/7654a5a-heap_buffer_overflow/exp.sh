@@ -1,0 +1,1 @@
+./compress_fuzzer @POC@

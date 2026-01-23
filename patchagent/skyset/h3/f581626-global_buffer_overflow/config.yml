@@ -1,0 +1,5 @@
+fix_commit: fce1c53844ca21dcc14f3acabeaf2e12d47e5568
+fix_date: '2022-09-12'
+project: h3
+sanitizer: AddressSanitizer
+tag: f581626-global_buffer_overflow

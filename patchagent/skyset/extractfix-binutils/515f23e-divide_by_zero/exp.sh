@@ -1,0 +1,1 @@
+./binutils/nm-new -A -a -l -S -s --special-syms --synthetic --with-symbol-versions -D @POC@

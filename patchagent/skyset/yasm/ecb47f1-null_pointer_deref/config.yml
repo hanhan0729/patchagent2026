@@ -1,0 +1,3 @@
+project: yasm
+tag: ecb47f1-null_pointer_deref
+sanitizer: AddressSanitizer

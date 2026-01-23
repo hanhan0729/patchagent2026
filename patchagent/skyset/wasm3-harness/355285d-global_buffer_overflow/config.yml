@@ -1,0 +1,5 @@
+fix_commit: ce6105b4c1c2d662c653f7ff4522f91262ee2cd8
+fix_date: '2021-04-09'
+project: wasm3-harness
+sanitizer: AddressSanitizer
+tag: 355285d-global_buffer_overflow

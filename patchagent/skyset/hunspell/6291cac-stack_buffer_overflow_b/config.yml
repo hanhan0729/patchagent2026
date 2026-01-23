@@ -1,0 +1,5 @@
+fix_commit: 35c3cad4d70b222e7c1d73211a79a96ff7bf3651
+fix_date: '2022-09-17'
+project: hunspell
+sanitizer: AddressSanitizer
+tag: 6291cac-stack_buffer_overflow_b

@@ -1,0 +1,13 @@
+diff --git a/tools/gif2tiff.c b/tools/gif2tiff.c
+index e7ea1235..908c47f0 100644
+--- a/tools/gif2tiff.c
++++ b/tools/gif2tiff.c
+@@ -312,7 +312,7 @@ readextension(void)
+     char buf[255];
+ 
+     (void) getc(infile);
+-    while ((count = getc(infile))) {
++    while ((count = getc(infile)) && count > 0 && count < 255) {
+         memset(buf, 0, count);
+         fread(buf, 1, count, infile);
+     }

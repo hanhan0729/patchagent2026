@@ -1,0 +1,1 @@
+git clone https://github.com/hunspell/hunspell.git $SRC

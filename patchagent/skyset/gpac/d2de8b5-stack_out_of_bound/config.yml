@@ -1,0 +1,5 @@
+fix_commit: d0ced41651b279bb054eb6390751e2d4eb84819a
+fix_date: '2023-10-17'
+project: gpac
+sanitizer: AddressSanitizer
+tag: d2de8b5-stack_out_of_bound

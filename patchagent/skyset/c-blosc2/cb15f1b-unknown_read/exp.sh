@@ -1,0 +1,1 @@
+./tests/fuzz/decompress_chunk_fuzzer @POC@

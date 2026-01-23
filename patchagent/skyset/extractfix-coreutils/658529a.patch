@@ -1,0 +1,83 @@
+diff --git a/lib/freadahead.c b/lib/freadahead.c
+index aa4b367463..372cc7683f 100644
+--- a/lib/freadahead.c
++++ b/lib/freadahead.c
+@@ -25,7 +25,7 @@
+ size_t
+ freadahead (FILE *fp)
+ {
+-#if defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
++#if defined _IO_ftrylockfile || __GNU_LIBRARY__ == 6 /* GNU libc, BeOS, Haiku, Linux libc5 */
+   if (fp->_IO_write_ptr > fp->_IO_write_base)
+     return 0;
+   return (fp->_IO_read_end - fp->_IO_read_ptr)
+diff --git a/lib/freadptr.c b/lib/freadptr.c
+index 7dc5e47565..7c2a18fff8 100644
+--- a/lib/freadptr.c
++++ b/lib/freadptr.c
+@@ -29,7 +29,7 @@ freadptr (FILE *fp, size_t *sizep)
+   size_t size;
+ 
+   /* Keep this code in sync with freadahead!  */
+-#if defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
++#if defined _IO_ftrylockfile || __GNU_LIBRARY__ == 6 /* GNU libc, BeOS, Haiku, Linux libc5 */
+   if (fp->_IO_write_ptr > fp->_IO_write_base)
+     return NULL;
+   size = fp->_IO_read_end - fp->_IO_read_ptr;
+diff --git a/lib/freadseek.c b/lib/freadseek.c
+index 4eedf0ad79..dc1fdba3d7 100644
+--- a/lib/freadseek.c
++++ b/lib/freadseek.c
+@@ -36,7 +36,7 @@ freadptrinc (FILE *fp, size_t increment)
+   /* Keep this code in sync with freadptr!  */
+ #if HAVE___FREADPTRINC              /* musl libc */
+   __freadptrinc (fp, increment);
+-#elif defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
++#elif defined _IO_ftrylockfile || __GNU_LIBRARY__ == 6 /* GNU libc, BeOS, Haiku, Linux libc5 */
+   fp->_IO_read_ptr += increment;
+ #elif defined __sferror || defined __DragonFly__ /* FreeBSD, NetBSD, OpenBSD, DragonFly, Mac OS X, Cygwin */
+   fp_->_p += increment;
+diff --git a/lib/fseeko.c b/lib/fseeko.c
+index 46ee04bf70..13b9bd0d57 100644
+--- a/lib/fseeko.c
++++ b/lib/fseeko.c
+@@ -47,7 +47,7 @@ fseeko (FILE *fp, off_t offset, int whence)
+ #endif
+ 
+   /* These tests are based on fpurge.c.  */
+-#if defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
++#if defined _IO_ftrylockfile || __GNU_LIBRARY__ == 6 /* GNU libc, BeOS, Haiku, Linux libc5 */
+   if (fp->_IO_read_end == fp->_IO_read_ptr
+       && fp->_IO_write_ptr == fp->_IO_write_base
+       && fp->_IO_save_base == NULL)
+diff --git a/lib/fseterr.c b/lib/fseterr.c
+index c8cede820b..68d20138e8 100644
+--- a/lib/fseterr.c
++++ b/lib/fseterr.c
+@@ -29,7 +29,7 @@ fseterr (FILE *fp)
+   /* Most systems provide FILE as a struct and the necessary bitmask in
+      <stdio.h>, because they need it for implementing getc() and putc() as
+      fast macros.  */
+-#if defined _IO_ftrylockfile || __GNU_LIBRARY__ == 1 /* GNU libc, BeOS, Haiku, Linux libc5 */
++#if defined _IO_ftrylockfile || __GNU_LIBRARY__ == 6 /* GNU libc, BeOS, Haiku, Linux libc5 */
+   fp->_flags |= _IO_ERR_SEEN;
+ #elif defined __sferror || defined __DragonFly__ /* FreeBSD, NetBSD, OpenBSD, DragonFly, Mac OS X, Cygwin */
+   fp_->_flags |= __SERR;
+diff --git a/lib/stdio-impl.h b/lib/stdio-impl.h
+index 0509f861eb..16afaf0600 100644
+--- a/lib/stdio-impl.h
++++ b/lib/stdio-impl.h
+@@ -21,6 +21,13 @@
+ 
+ /* BSD stdio derived implementations.  */
+ 
++# if !defined _IO_UNBUFFERED
++#  define _IO_UNBUFFERED 0x2
++# endif
++# if !defined _IO_IN_BACKUP
++#  define _IO_IN_BACKUP 0x100
++# endif
++
+ #if defined __NetBSD__                         /* NetBSD */
+ /* Get __NetBSD_Version__.  */
+ # include <sys/param.h>

@@ -1,0 +1,5 @@
+fix_commit: c5507dff5f5b2936937442b43f6c021b4f8a493d
+fix_date: '2022-12-26'
+project: krb5
+sanitizer: AddressSanitizer
+tag: d864d74-heap_buffer_overflow

@@ -1,0 +1,5 @@
+fix_commit: 7d1c7d46c7a7fcd9987fc2691712b0696ab6646c
+fix_date: '2022-09-16'
+project: hunspell
+sanitizer: AddressSanitizer
+tag: 74b08bf-heap_double_free

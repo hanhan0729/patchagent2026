@@ -1,0 +1,3 @@
+project: yasm
+tag: 84be2ee-heap_out_of_bound
+sanitizer: AddressSanitizer

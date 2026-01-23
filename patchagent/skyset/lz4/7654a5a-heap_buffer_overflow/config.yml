@@ -1,0 +1,5 @@
+fix_commit: 13a2d9e34ffc4170720ce417c73e396d0ac1471a
+fix_date: '2019-07-17'
+project: lz4
+sanitizer: AddressSanitizer
+tag: 7654a5a-heap_buffer_overflow

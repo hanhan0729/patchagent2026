@@ -1,0 +1,5 @@
+fix_commit: 629bd4588352fce4fc1bfe7b44d353175e7a3f0d
+fix_date: '2021-09-21'
+project: sleuthkit
+sanitizer: AddressSanitizer
+tag: 38a13f9-heap_buffer_overflow

@@ -1,0 +1,1 @@
+./dictionary_stream_round_trip @POC@

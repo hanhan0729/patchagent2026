@@ -1,0 +1,5 @@
+fix_commit: cbe01e0c6757c918a220a63ce614fe77260a7a03
+fix_date: '2017-06-20'
+project: extractfix-libjpeg-turbo
+sanitizer: AddressSanitizer
+tag: ae8cdf5-heap_buffer_overflow

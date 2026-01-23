@@ -1,0 +1,5 @@
+fix_commit: f436c3029850c138e54a0de055d61db45130409e
+fix_date: '2022-01-06'
+project: md4c
+sanitizer: AddressSanitizer
+tag: 3478ec6-heap_buffer_overflow_b

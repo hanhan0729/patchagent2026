@@ -1,0 +1,16 @@
+diff --git a/src/vm.c b/src/vm.c
+index 6133cbcca..d825b6d59 100644
+--- a/src/vm.c
++++ b/src/vm.c
+@@ -692,6 +692,11 @@ mrb_f_send(mrb_state *mrb, mrb_value self)
+     mrb_argnum_error(mrb, 0, 1, -1);
+   }
+   else if (n == 15) {
++    if (!mrb_array_p(regs[0]) || RARRAY_LEN(regs[0]) == 0) {
++      mrb_raise(mrb, E_ARGUMENT_ERROR, "first argument is not a valid non-empty array");
++      return mrb_nil_value(); /* Or however mrb handles errors appropriately here */
++    }
++
+     name = mrb_obj_to_sym(mrb, RARRAY_PTR(regs[0])[0]);
+   }
+   else {

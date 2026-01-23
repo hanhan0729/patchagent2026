@@ -1,0 +1,28 @@
+diff --git a/NEWS b/NEWS
+index edfbdfa1d..ba7679ffd 100644
+--- a/NEWS
++++ b/NEWS
+@@ -35,6 +35,10 @@ GNU coreutils NEWS                                    -*- outline -*-
+   nl now resets numbering for each page section rather than just for each page.
+   [This bug was present in "the beginning".]
+ 
++  pr now handles specified separator strings containing tabs correctly.
++  Previously it would have output random data from memory.
++  [This bug was detected with ASAN and present in "the beginning".]
++
+   sort -h -k now works even in locales that use blank as thousands separator.
+ 
+   stty --help no longer outputs extraneous gettext header lines
+diff --git a/src/pr.c b/src/pr.c
+index 20e863760..26f221f99 100644
+--- a/src/pr.c
++++ b/src/pr.c
+@@ -1233,7 +1233,7 @@ init_parameters (int number_of_files)
+         }
+       /* It's rather pointless to define a TAB separator with column
+          alignment */
+-      else if (!join_lines && *col_sep_string == '\t')
++      else if (!join_lines && col_sep_length == 1 && *col_sep_string == '\t')
+         col_sep_string = column_separator;
+ 
+       truncate_lines = true;

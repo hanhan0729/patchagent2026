@@ -1,0 +1,1 @@
+rake all test

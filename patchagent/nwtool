@@ -1,0 +1,67 @@
+#!/usr/bin/env python3
+
+import os
+from dotenv import load_dotenv
+
+load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
+
+
+import time
+import random
+import argparse
+from nvwa.sky.utils import get_all_task, make_task
+from nvwa.context import ContextManager
+from nvwa.frontend import patch
+from nvwa.logger import log
+
+parser = argparse.ArgumentParser(description="Nvwa Patch Tool")
+parser.add_argument("--project", type=str, help="project name")
+parser.add_argument("--tag", type=str, help="tag name")
+parser.add_argument("--model", type=str, default="gpt-4", help="model name")
+parser.add_argument("--log_path", type=str, help="log path")
+parser.add_argument("--thershold", type=int, default=15, help="thershold")
+parser.add_argument("--reset", dest="reset", action="store_true", help="reset history")
+parser.add_argument("--tmux", dest="tmux", action="store_true", help="tmux mode")
+parser.add_argument("--max_sessions", type=int, default=5, help="max tmux sessions")
+parser.add_argument("--skip_linux", dest="skip_linux", action="store_true", help="skip linux")
+parser.add_argument("--skip_extractfix", dest="skip_extractfix", action="store_true", help="skip extractfix")
+
+args = parser.parse_args()
+
+if __name__ == "__main__":
+    all_task = []
+    for task in get_all_task(project=args.project, tag=args.tag, skip_linux=args.skip_linux, skip_extractfix=args.skip_extractfix, skip_setup=True):
+        cm = ContextManager(task, load_context=True, path=args.log_path)
+        if (cm.patch is None and cm.count < args.thershold) or args.reset:
+            all_task.append((task.project, task.tag))
+
+    log.info(f"Total {len(all_task)} tasks to patch")
+
+    random.shuffle(all_task)
+    for i, (project, tag) in enumerate(all_task):
+        if args.tmux:
+            tmux_session = f"nwtool-{project}-{tag}"
+            command = f"./nwtool --project {project} --tag {tag}"
+            if args.model:
+                command += f" --model {args.model}"
+            if args.log_path:
+                command += f" --log_path {args.log_path}"
+            if args.reset:
+                command += " --reset"
+
+            while True:
+                num_sessions = int(os.popen("tmux ls | grep -c nwtool-").read().strip())
+                if num_sessions < args.max_sessions:
+                    break
+                log.info(f"Waiting for tmux sessions to be less than {args.max_sessions}")
+                time.sleep(10)
+
+            log.info(f"Start tmux session {tmux_session}")
+            os.system(f"tmux has-session -t {tmux_session} 2>/dev/null || tmux new-session -d -s {tmux_session} '{command}'")
+        else:
+            task = make_task(project, tag)
+            log.info(f"Patch {i + 1}/{len(all_task)} {task.project}-{task.tag}")
+            patch(task, reset=args.reset, model=args.model, log_path=args.log_path)
+
+# ./nwtool --log_path ./archives/gpt-4 --model gpt-4
+# ./nwtool --log_path ./archives/claude-3-opus --model claude-3-opus

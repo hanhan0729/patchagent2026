@@ -1,0 +1,1 @@
+./tools/tiffcp -i @POC@ out.tif

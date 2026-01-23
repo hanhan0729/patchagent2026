@@ -1,0 +1,5 @@
+fix_commit: 4c069f5c8f3b63d8ba8556ba8292e1f5972508d6
+fix_date: '2021-02-27'
+project: irssi
+sanitizer: AddressSanitizer
+tag: b472570-heap_buffer_overflow_b

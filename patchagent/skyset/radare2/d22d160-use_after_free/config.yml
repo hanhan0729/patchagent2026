@@ -1,0 +1,5 @@
+fix_commit: a7ce29647fcb38386d7439696375e16e093d6acb
+fix_date: '2022-03-21'
+project: radare2
+sanitizer: AddressSanitizer
+tag: d22d160-use_after_free

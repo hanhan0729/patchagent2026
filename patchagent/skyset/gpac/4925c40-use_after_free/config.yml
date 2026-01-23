@@ -1,0 +1,5 @@
+fix_commit: fb5eb9016e6ee69ebebf20c9a046ae023e341502
+fix_date: '2023-10-13'
+project: gpac
+sanitizer: AddressSanitizer
+tag: 4925c40-use_after_free

@@ -1,0 +1,1 @@
+./src/make-prime-list 5000

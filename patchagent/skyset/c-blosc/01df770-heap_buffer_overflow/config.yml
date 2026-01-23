@@ -1,0 +1,5 @@
+fix_commit: e3fdd3e506a23ec66d9f3fe2fe346e4a03b1787a
+fix_date: '2020-07-03'
+project: c-blosc
+sanitizer: AddressSanitizer
+tag: 01df770-heap_buffer_overflow

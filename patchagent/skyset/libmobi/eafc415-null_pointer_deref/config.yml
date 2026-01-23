@@ -1,0 +1,5 @@
+fix_commit: c0699c8693c47f14a2e57dec7292e862ac7adf9c
+fix_date: '2022-04-27'
+project: libmobi
+sanitizer: AddressSanitizer
+tag: eafc415-null_pointer_deref

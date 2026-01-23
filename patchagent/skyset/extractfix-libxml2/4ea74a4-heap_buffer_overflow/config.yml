@@ -1,0 +1,5 @@
+fix_commit: 6a36fbe3b3e001a8a840b5c1fdd81cefc9947f0d
+fix_date: '2012-10-30'
+project: extractfix-libxml2
+sanitizer: AddressSanitizer
+tag: 4ea74a4-heap_buffer_overflow

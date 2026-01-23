@@ -1,0 +1,21 @@
+diff --git a/src/media_tools/avilib.c b/src/media_tools/avilib.c
+index 459ff8043..27cd81133 100644
+--- a/src/media_tools/avilib.c
++++ b/src/media_tools/avilib.c
+@@ -2941,6 +2941,7 @@ int AVI_read_frame(avi_t *AVI, u8 *vidbuf, int *keyframe)
+ 	}
+ 
+ 	gf_fseek(AVI->fdes, AVI->video_index[AVI->video_pos].pos, SEEK_SET);
++	AVI->video_pos++;
+ 
+ 	if (avi_read(AVI->fdes,vidbuf,n) != (u32) n)
+ 	{
+@@ -2948,8 +2949,6 @@ int AVI_read_frame(avi_t *AVI, u8 *vidbuf, int *keyframe)
+ 		return -1;
+ 	}
+ 
+-	AVI->video_pos++;
+-
+ 	return n;
+ }
+ 

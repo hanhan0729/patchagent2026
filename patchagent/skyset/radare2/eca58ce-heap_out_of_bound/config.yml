@@ -1,0 +1,5 @@
+fix_commit: 193f4fe01d7f626e2ea937450f2e0c4604420e9d
+fix_date: '2022-05-26'
+project: radare2
+sanitizer: AddressSanitizer
+tag: eca58ce-heap_out_of_bound

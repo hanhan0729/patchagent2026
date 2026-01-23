@@ -1,0 +1,5 @@
+fix_commit: deb669ee8be55a94565f6f8a6b60890c2e7c6f32
+fix_date: '2021-02-21'
+project: libsndfile
+sanitizer: AddressSanitizer
+tag: 4819cad-heap_buffer_overflow

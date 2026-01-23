@@ -1,0 +1,5 @@
+fix_commit: b68b3f0bf5c366e003221d78fd663a1d5514a876
+fix_date: '2023-08-31'
+project: gpac
+sanitizer: AddressSanitizer
+tag: 4607052-double_free

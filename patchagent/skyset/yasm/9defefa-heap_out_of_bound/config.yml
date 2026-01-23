@@ -1,0 +1,3 @@
+project: yasm
+tag: 9defefa-heap_out_of_bound
+sanitizer: AddressSanitizer

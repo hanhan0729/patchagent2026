@@ -1,0 +1,5 @@
+fix_commit: 94691dc884d1a8ada39f073408b4bb92fe7fe882
+fix_date: '2017-06-07'
+project: extractfix-libxml2
+sanitizer: AddressSanitizer
+tag: 362b322-null_ptr_dereference

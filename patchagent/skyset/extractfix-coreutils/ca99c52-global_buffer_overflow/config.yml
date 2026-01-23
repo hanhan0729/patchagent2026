@@ -1,0 +1,5 @@
+fix_commit: d91aeef0527bf8ec0f83c3c3b69f3979c0b4c4a0
+fix_date: '2016-11-25'
+project: extractfix-coreutils
+sanitizer: AddressSanitizer
+tag: ca99c52-global_buffer_overflow

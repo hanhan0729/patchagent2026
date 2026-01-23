@@ -1,0 +1,5 @@
+fix_commit: b13e9986aa1134c764b0d84f0f66328429b9c2eb
+fix_date: '2022-01-21'
+project: gpac
+sanitizer: AddressSanitizer
+tag: ebedc7a-use_after_free

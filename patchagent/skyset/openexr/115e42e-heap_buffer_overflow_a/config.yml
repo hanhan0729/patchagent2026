@@ -1,0 +1,5 @@
+fix_commit: 043a50807eb19af844dd34281900b2ad8571325f
+fix_date: '2022-10-24'
+project: openexr
+sanitizer: AddressSanitizer
+tag: 115e42e-heap_buffer_overflow_a

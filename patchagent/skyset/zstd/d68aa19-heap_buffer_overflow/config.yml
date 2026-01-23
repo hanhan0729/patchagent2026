@@ -1,0 +1,5 @@
+fix_commit: 044c8b47224d7cfbbd57317906e91f2db5b30994
+fix_date: '2021-09-22'
+project: zstd
+sanitizer: AddressSanitizer
+tag: d68aa19-heap_buffer_overflow

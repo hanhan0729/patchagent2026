@@ -1,0 +1,5 @@
+fix_commit: 4c7730384f0ec26b79d536ba79fbbfc746fda87a
+fix_date: '2022-09-12'
+project: gpac
+sanitizer: AddressSanitizer
+tag: b6b6360-null_pointer_deref

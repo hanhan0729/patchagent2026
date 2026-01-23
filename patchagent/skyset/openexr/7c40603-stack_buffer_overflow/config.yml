@@ -1,0 +1,5 @@
+fix_commit: 6f235a803c6370583891f008181f85a91eedb681
+fix_date: '2023-05-24'
+project: openexr
+sanitizer: AddressSanitizer
+tag: 7c40603-stack_buffer_overflow

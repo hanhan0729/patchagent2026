@@ -1,0 +1,5 @@
+fix_commit: efd37a64eaff5a0a26ae2566fdb45dc4a0c91673
+fix_date: '2019-09-20'
+project: zstd
+sanitizer: AddressSanitizer
+tag: 3cac061-heap_buffer_overflow

@@ -1,0 +1,14 @@
+diff --git a/jquant1.c b/jquant1.c
+index e7814815..34965ed0 100644
+--- a/jquant1.c
++++ b/jquant1.c
+@@ -531,6 +531,9 @@ quantize_ord_dither (j_decompress_ptr cinfo, JSAMPARRAY input_buf,
+   JDIMENSION col;
+   JDIMENSION width = cinfo->output_width;
+ 
++  if (output_buf == NULL)        /* just want to update dither tables */
++    return;
++
+   for (row = 0; row < num_rows; row++) {
+     /* Initialize output values to 0 so can process components separately */
+     jzero_far((void *) output_buf[row], (size_t) (width * sizeof(JSAMPLE)));

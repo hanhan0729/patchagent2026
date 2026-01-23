@@ -1,0 +1,5 @@
+fix_commit: fb1ab50e448ddbed746fd27ae07469bc506d838b
+fix_date: '2022-04-26'
+project: libmobi
+sanitizer: AddressSanitizer
+tag: 4b60805-heap_out_of_bound

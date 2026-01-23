@@ -1,0 +1,1 @@
+git clone https://github.com/irssi/irssi.git $SRC

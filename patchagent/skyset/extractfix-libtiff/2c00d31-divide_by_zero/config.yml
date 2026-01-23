@@ -1,0 +1,5 @@
+fix_commit: 47f2fb61a3a64667bce1a8398a8fcb1b348ff122
+fix_date: '2017-01-11'
+project: extractfix-libtiff
+sanitizer: AddressSanitizer
+tag: 2c00d31-divide_by_zero

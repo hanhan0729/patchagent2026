@@ -1,0 +1,5 @@
+fix_commit: dd2b651243125701dca2ed2f31b3d34056719b9c
+fix_date: '2012-03-30'
+project: extractfix-libjpeg-turbo
+sanitizer: AddressSanitizer
+tag: 4f24016-stack_buffer_overflow

@@ -1,0 +1,5 @@
+fix_commit: 1bdda93e348c160c84e30da3637acef26d0348de
+fix_date: '2023-10-19'
+project: radare2
+sanitizer: AddressSanitizer
+tag: d026503-heap_out_of_bound

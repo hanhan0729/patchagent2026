@@ -1,0 +1,5 @@
+fix_commit: 842f809d4ec6a12af2906f948657281c9ebc8a24
+fix_date: '2022-12-29'
+project: radare2
+sanitizer: AddressSanitizer
+tag: 5c0bde8-null_pointer_deref

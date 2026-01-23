@@ -1,0 +1,14 @@
+diff --git a/src/vm.c b/src/vm.c
+index 8b81031a3..fd17e90cc 100644
+--- a/src/vm.c
++++ b/src/vm.c
+@@ -1394,7 +1394,8 @@ RETRY_TRY_BLOCK:
+         regs[a] = mrb_ary_entry(va, mrb_integer(vb));
+         break;
+       case MRB_TT_HASH:
+-        regs[a] = mrb_hash_get(mrb, va, vb);
++        va = mrb_hash_get(mrb, va, vb);
++        regs[a] = va;
+         break;
+       case MRB_TT_STRING:
+         switch (mrb_type(vb)) {

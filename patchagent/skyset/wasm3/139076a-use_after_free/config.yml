@@ -1,0 +1,3 @@
+project: wasm3
+tag: 139076a-use_after_free
+sanitizer: AddressSanitizer

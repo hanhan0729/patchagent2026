@@ -1,0 +1,12 @@
+diff --git a/src/isomedia/box_code_base.c b/src/isomedia/box_code_base.c
+index 0048d9eab..9eee78da6 100644
+--- a/src/isomedia/box_code_base.c
++++ b/src/isomedia/box_code_base.c
+@@ -10663,6 +10668,7 @@ GF_Err trgt_box_write(GF_Box *s, GF_BitStream *bs)
+ 	GF_Err e;
+ 	GF_TrackGroupTypeBox *ptr = (GF_TrackGroupTypeBox *) s;
+ 	if (!s) return GF_BAD_PARAM;
++	if (ptr->group_type == GF_ISOM_BOX_TYPE_UUID) return GF_BAD_PARAM;
+ 	s->type = ptr->group_type;
+ 	e = gf_isom_full_box_write(s, bs);
+ 	s->type = GF_ISOM_BOX_TYPE_TRGT;

@@ -1,0 +1,5 @@
+fix_commit: 9c74581c7827a6e1aea0f0a6f787ae22b4331a12
+fix_date: '2022-01-27'
+project: gpac
+sanitizer: AddressSanitizer
+tag: a6b6408-heap_out_of_bound

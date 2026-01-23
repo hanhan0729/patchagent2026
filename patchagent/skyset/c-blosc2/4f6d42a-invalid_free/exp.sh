@@ -1,0 +1,1 @@
+./tests/fuzz/decompress_frame_fuzzer @POC@

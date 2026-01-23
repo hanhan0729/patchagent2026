@@ -1,0 +1,5 @@
+fix_commit: a4d97934d51cb88954cc49161dc1d151f64afb6b
+fix_date: '2022-04-21'
+project: mruby
+sanitizer: AddressSanitizer
+tag: bdc244e-null_pointer_deref

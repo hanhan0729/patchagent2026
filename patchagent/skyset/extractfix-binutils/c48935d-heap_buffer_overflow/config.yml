@@ -1,0 +1,5 @@
+fix_commit: d8010d3e75ec7194a4703774090b27486b742d48
+fix_date: '2017-09-24'
+project: extractfix-binutils
+sanitizer: AddressSanitizer
+tag: 515f23e-divide_by_zero

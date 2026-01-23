@@ -1,0 +1,5 @@
+fix_commit: 7f5a490d09f4d56801ac3a3e4e39e03e1471b44c
+fix_date: '2022-03-26'
+project: mruby
+sanitizer: AddressSanitizer
+tag: bf5bbf0-use_after_free

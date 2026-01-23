@@ -1,0 +1,5 @@
+fix_commit: eafc415bc6067e72577f70d6dd5acbf057ce6e6f
+fix_date: '2022-04-27'
+project: libmobi
+sanitizer: AddressSanitizer
+tag: afa8ce1-stack_out_of_bound

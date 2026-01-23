@@ -1,0 +1,5 @@
+fix_commit: 034a5c02488cf7f0048e130177fc71c9e626e135
+fix_date: '2021-07-23'
+project: libtpms
+sanitizer: AddressSanitizer
+tag: e563166-stack_buffer_overflow

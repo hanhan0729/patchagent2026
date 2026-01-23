@@ -1,0 +1,60 @@
+diff --git a/include/gpac/internal/media_dev.h b/include/gpac/internal/media_dev.h
+index c2c2833db..f722dd99a 100644
+--- a/include/gpac/internal/media_dev.h
++++ b/include/gpac/internal/media_dev.h
+@@ -464,7 +464,7 @@ typedef struct RepFormat
+ typedef struct
+ {
+ 	u16 avg_bit_rate, max_bit_rate, avg_pic_rate;
+-	u8 constand_pic_rate_idc;
++	u8 constant_pic_rate_idc;
+ } HEVC_RateInfo;
+ 
+ 
+@@ -483,6 +483,7 @@ typedef struct
+ 	HEVC_ProfileTierLevel ptl;
+ 
+ 	HEVC_SublayerPTL sub_ptl[8];
++	//this is not parsed yet (in VPS VUI)
+ 	HEVC_RateInfo rates[8];
+ 
+ 
+diff --git a/src/filters/reframe_nalu.c b/src/filters/reframe_nalu.c
+index b680597d9..165b0f136 100644
+--- a/src/filters/reframe_nalu.c
++++ b/src/filters/reframe_nalu.c
+@@ -1018,7 +1018,7 @@ static void naludmx_create_hevc_decoder_config(GF_NALUDmxCtx *ctx, u8 **dsi, u32
+ 
+ 		if (!i) {
+ 			hvcc->avgFrameRate = lvcc->avgFrameRate = vps->rates[0].avg_pic_rate;
+-			hvcc->constantFrameRate = lvcc->constantFrameRate = vps->rates[0].constand_pic_rate_idc;
++			hvcc->constantFrameRate = lvcc->constantFrameRate = vps->rates[0].constant_pic_rate_idc;
+ 			hvcc->numTemporalLayers = lvcc->numTemporalLayers = vps->max_sub_layers;
+ 			hvcc->temporalIdNested = lvcc->temporalIdNested = vps->temporal_id_nesting;
+ 		}
+@@ -1183,7 +1183,7 @@ static void naludmx_create_vvc_decoder_config(GF_NALUDmxCtx *ctx, u8 **dsi, u32
+ 
+ 		if (!i) {
+ 			cfg->avgFrameRate = vps->rates[0].avg_pic_rate;
+-			cfg->constantFrameRate = vps->rates[0].constand_pic_rate_idc;
++			cfg->constantFrameRate = vps->rates[0].constant_pic_rate_idc;
+ 			cfg->numTemporalLayers = vps->max_sub_layers;
+ 		}
+ 		if (!ctx->analyze)
+diff --git a/src/media_tools/av_parsers.c b/src/media_tools/av_parsers.c
+index 552be943e..f781cb6f3 100644
+--- a/src/media_tools/av_parsers.c
++++ b/src/media_tools/av_parsers.c
+@@ -8195,8 +8195,10 @@ static s32 gf_hevc_read_sps_bs_internal(GF_BitStream *bs, HEVCState *hevc, u8 la
+ 		sps->update_rep_format_flag = gf_bs_read_int_log(bs, 1, "update_rep_format_flag");
+ 		if (sps->update_rep_format_flag) {
+ 			sps->rep_format_idx = gf_bs_read_int_log(bs, 8, "rep_format_idx");
+-		}
+-		else {
++			if (sps->rep_format_idx>15) {
++				return -1;
++			}
++		} else {
+ 			sps->rep_format_idx = vps->rep_format_idx[layer_id];
+ 		}
+ 		sps->width = vps->rep_formats[sps->rep_format_idx].pic_width_luma_samples;

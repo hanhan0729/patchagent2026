@@ -1,0 +1,5 @@
+fix_commit: c8c083cb750606b2da81582cd8e43b442bb143e6
+fix_date: '2022-04-09'
+project: mruby
+sanitizer: AddressSanitizer
+tag: 55b5261-null_pointer_deref

@@ -1,0 +1,5 @@
+fix_commit: ee02c389ca2106cc70f5cea2d7e5d43b96510f27
+fix_date: '2022-12-15'
+project: assimp
+sanitizer: AddressSanitizer
+tag: 0422dff-heap_buffer_overflow

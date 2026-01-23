@@ -1,0 +1,1 @@
+./djpeg -colors 256 -bmp @POC@

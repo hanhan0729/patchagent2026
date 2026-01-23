@@ -1,0 +1,5 @@
+fix_commit: 0a76a8c765c7b8327c59646284fa78c3c27e5490
+fix_date: '2017-01-11'
+project: extractfix-libtiff
+sanitizer: UndefinedBehaviorSanitizer
+tag: 3144e57-invalid_shift

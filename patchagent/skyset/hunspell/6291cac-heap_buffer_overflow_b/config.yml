@@ -1,0 +1,5 @@
+fix_commit: ef41c16af9a7fe0df27f421bd90120363c60dbb9
+fix_date: '2022-10-07'
+project: hunspell
+sanitizer: AddressSanitizer
+tag: 6291cac-heap_buffer_overflow_b

@@ -1,0 +1,5 @@
+fix_commit: 62b03b85a56a7b98e6eef237deeff1a8b41f8fb8
+fix_date: '2023-01-09'
+project: libplist
+sanitizer: AddressSanitizer
+tag: 491a3ac-heap_use_after_free

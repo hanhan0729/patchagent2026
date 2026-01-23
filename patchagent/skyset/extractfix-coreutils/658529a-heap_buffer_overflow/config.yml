@@ -1,0 +1,5 @@
+fix_commit: 1d0f1b7ce10807290715d0b7c4637ac9d4fc7821
+fix_date: '2015-02-05'
+project: extractfix-coreutils
+sanitizer: AddressSanitizer
+tag: 658529a-heap_buffer_overflow

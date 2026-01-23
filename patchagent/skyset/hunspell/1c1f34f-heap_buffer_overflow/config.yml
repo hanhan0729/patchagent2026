@@ -1,0 +1,5 @@
+fix_commit: bf229433b9ba7131bd80b52b8c71399230e0dc12
+fix_date: '2022-12-05'
+project: hunspell
+sanitizer: AddressSanitizer
+tag: 1c1f34f-heap_buffer_overflow

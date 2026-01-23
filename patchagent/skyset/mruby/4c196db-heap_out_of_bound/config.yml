@@ -1,0 +1,5 @@
+fix_commit: a844f8965584c0737c436cfaf98bdccdf8d8b39e
+fix_date: '2021-09-23'
+project: mruby
+sanitizer: AddressSanitizer
+tag: 4c196db-heap_out_of_bound

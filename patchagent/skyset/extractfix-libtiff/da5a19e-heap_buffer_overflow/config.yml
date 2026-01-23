@@ -1,0 +1,5 @@
+fix_commit: 531a87ec56c682d65fa1c09f0474124cfb2a1dda
+fix_date: '2013-09-20'
+project: extractfix-libtiff
+sanitizer: AddressSanitizer
+tag: acb5bb9-heap_buffer_overflow

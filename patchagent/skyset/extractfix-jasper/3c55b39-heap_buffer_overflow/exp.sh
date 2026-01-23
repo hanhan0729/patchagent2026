@@ -1,0 +1,1 @@
+./src/appl/imginfo -f @POC@

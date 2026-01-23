@@ -1,0 +1,4 @@
+#!/bin/bash
+# Placeholder for syz-symbolize tool
+# This is a simple passthrough script that just returns the input
+cat "$1"

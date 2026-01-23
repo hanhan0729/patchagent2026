@@ -1,0 +1,1 @@
+./binutils/readelf -w @POC@

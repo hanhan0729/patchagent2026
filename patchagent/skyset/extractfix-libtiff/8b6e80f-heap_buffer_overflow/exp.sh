@@ -1,0 +1,1 @@
+./tools/thumbnail @POC@ tmp

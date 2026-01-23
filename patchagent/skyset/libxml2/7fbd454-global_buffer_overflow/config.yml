@@ -1,0 +1,5 @@
+fix_commit: 1061537efdf3874c91fd50d18f98c4b8a3518e52
+fix_date: '2023-03-26'
+project: libxml2
+sanitizer: AddressSanitizer
+tag: 7fbd454-global_buffer_overflow

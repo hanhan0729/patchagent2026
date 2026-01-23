@@ -1,0 +1,5 @@
+fix_commit: 85f5cbd3705b34fcc52009ca51d8167ab18764fa
+fix_date: '2023-01-17'
+project: libplist
+sanitizer: AddressSanitizer
+tag: 491a3ac-heap_buffer_overflow_b

@@ -1,0 +1,5 @@
+fix_commit: 910ec80d2856cfa825e2230ff2de8347a4fa4522
+fix_date: '2022-07-09'
+project: lz4
+sanitizer: AddressSanitizer
+tag: 9d20cd5-invalid_free

@@ -1,0 +1,5 @@
+fix_commit: 3970faeb7fc8cee60cc5260ab4102433c37d5d63
+fix_date: '2021-02-15'
+project: libsndfile
+sanitizer: AddressSanitizer
+tag: 2b4cc4b-heap_buffer_overflow

@@ -1,0 +1,5 @@
+fix_commit: 1998691e5687037a77b5addd4ca7533bfbe90553
+fix_date: '2020-10-22'
+project: libsndfile
+sanitizer: AddressSanitizer
+tag: 932aead-negative_size_param

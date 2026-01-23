@@ -1,0 +1,1 @@
+git clone https://gitlab.gnome.org/GNOME/libxml2.git $SRC

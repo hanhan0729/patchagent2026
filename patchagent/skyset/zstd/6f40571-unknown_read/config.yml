@@ -1,0 +1,5 @@
+fix_commit: e6c8a5dd40359801bf297dca3be48e38c85ed6c2
+fix_date: '2021-05-04'
+project: zstd
+sanitizer: AddressSanitizer
+tag: 6f40571-unknown_read

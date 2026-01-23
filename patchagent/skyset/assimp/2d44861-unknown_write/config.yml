@@ -1,0 +1,5 @@
+fix_commit: 36dfa3bed31fe220a15648083a78c925fbec0792
+fix_date: '2023-06-14'
+project: assimp
+sanitizer: AddressSanitizer
+tag: 2d44861-unknown_write

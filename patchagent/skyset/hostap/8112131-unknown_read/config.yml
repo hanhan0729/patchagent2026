@@ -1,0 +1,5 @@
+fix_commit: 947272febe24a8f0ea828b5b2f35f13c3821901e
+fix_date: '2021-02-03'
+project: hostap
+sanitizer: AddressSanitizer
+tag: 8112131-unknown_read

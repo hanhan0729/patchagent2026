@@ -1,0 +1,5 @@
+fix_commit: 3dbfac5699c6887b7149a0b1c805c4730f63d0f4
+fix_date: '2021-04-20'
+project: irssi
+sanitizer: AddressSanitizer
+tag: afcb483-heap_use_after_free

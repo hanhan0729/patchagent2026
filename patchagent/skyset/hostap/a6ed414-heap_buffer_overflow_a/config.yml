@@ -1,0 +1,5 @@
+fix_commit: ce11c281ad1de25a815d49a29043d127cbc6354d
+fix_date: '2019-06-22'
+project: hostap
+sanitizer: AddressSanitizer
+tag: a6ed414-heap_buffer_overflow_a

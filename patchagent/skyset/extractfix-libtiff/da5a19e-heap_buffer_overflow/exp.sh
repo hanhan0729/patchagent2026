@@ -1,0 +1,1 @@
+./tools/gif2tiff @POC@ out.tif

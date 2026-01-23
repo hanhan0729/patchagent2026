@@ -1,0 +1,8 @@
+#!/usr/bin/env python
+
+import bearcc1
+import subprocess
+
+if __name__ == '__main__':
+    llvmcc = subprocess.check_output(['which', 'clang']).decode().strip()
+    bearcc1.build(llvmcc)

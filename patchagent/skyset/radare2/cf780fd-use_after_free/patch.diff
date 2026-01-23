@@ -1,0 +1,43 @@
+diff --git a/libr/core/canal.c b/libr/core/canal.c
+index 9b4ded95c1..408f3bc0b7 100644
+--- a/libr/core/canal.c
++++ b/libr/core/canal.c
+@@ -5188,11 +5188,12 @@ R_API void r_core_anal_esil(RCore *core, const char *str, const char *target) {
+ 		r_core_cmd0 (core, "aeim");
+ 		ESIL = core->anal->esil;
+ 	}
+-	const char *spname = r_reg_get_name (core->anal->reg, R_REG_NAME_SP);
+-	if (!spname) {
++	const char *kspname = r_reg_get_name (core->anal->reg, R_REG_NAME_SP);
++	if (R_STR_ISEMPTY (kspname)) {
+ 		eprintf ("Error: No =SP defined in the reg profile.\n");
+ 		return;
+ 	}
++	char *spname = strdup (kspname);
+ 	EsilBreakCtx ctx = {
+ 		&op,
+ 		fcn,
+@@ -5210,11 +5211,12 @@ R_API void r_core_anal_esil(RCore *core, const char *str, const char *target) {
+ 	}
+ 	//eprintf ("Analyzing ESIL refs from 0x%"PFMT64x" - 0x%"PFMT64x"\n", addr, end);
+ 	// TODO: backup/restore register state before/after analysis
+-	pcname = r_reg_get_name (core->anal->reg, R_REG_NAME_PC);
+-	if (!pcname || !*pcname) {
++	const char *kpcname = r_reg_get_name (core->anal->reg, R_REG_NAME_PC);
++	if (!kpcname || !*kpcname) {
+ 		eprintf ("Cannot find program counter register in the current profile.\n");
+ 		return;
+ 	}
++	pcname = strdup (kpcname);
+ 	esil_anal_stop = false;
+ 	r_cons_break_push (cccb, core);
+ 
+@@ -5544,6 +5544,8 @@ repeat:
+ 			break;
+ 		}
+ 	} while (get_next_i (&ictx, &i));
++	free (pcname);
++	free (spname);
+ 	r_list_free (ictx.bbl);
+ 	r_list_free (ictx.path);
+ 	r_list_free (ictx.switch_path);

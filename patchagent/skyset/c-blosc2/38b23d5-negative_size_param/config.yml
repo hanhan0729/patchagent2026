@@ -1,0 +1,5 @@
+fix_commit: ac7b9359e84d796bfb1ff1fd3f7c9eaf9a506799
+fix_date: '2021-06-08'
+project: c-blosc2
+sanitizer: AddressSanitizer
+tag: 38b23d5-negative_size_param

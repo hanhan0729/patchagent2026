@@ -1,0 +1,5 @@
+fix_commit: d8c2604cd438c41ec72aff52c16ebd8183068020
+fix_date: '2016-10-15'
+project: extractfix-jasper
+sanitizer: AddressSanitizer
+tag: 3c55b39-heap_buffer_overflow

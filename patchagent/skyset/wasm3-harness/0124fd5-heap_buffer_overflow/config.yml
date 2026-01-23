@@ -1,0 +1,5 @@
+fix_commit: 79255ba1dbbb476e57a5f450eb0bbe1b84ef0f01
+fix_date: '2021-04-12'
+project: wasm3-harness
+sanitizer: AddressSanitizer
+tag: 0124fd5-heap_buffer_overflow

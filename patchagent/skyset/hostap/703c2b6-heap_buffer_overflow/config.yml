@@ -1,0 +1,5 @@
+fix_commit: 76162b18280b174cd5e7101c9678f69785409fa3
+fix_date: '2020-01-28'
+project: hostap
+sanitizer: AddressSanitizer
+tag: 703c2b6-heap_buffer_overflow

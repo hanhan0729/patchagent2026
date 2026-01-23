@@ -1,0 +1,1 @@
+./cjpeg -outfile /dev/null @POC@

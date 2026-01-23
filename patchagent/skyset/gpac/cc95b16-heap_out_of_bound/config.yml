@@ -1,0 +1,5 @@
+fix_commit: 193633b1648582444fc99776cd741d7ba0125e86
+fix_date: '2023-08-31'
+project: gpac
+sanitizer: AddressSanitizer
+tag: cc95b16-heap_out_of_bound

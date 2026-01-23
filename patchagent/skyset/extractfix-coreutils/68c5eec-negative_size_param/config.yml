@@ -1,0 +1,5 @@
+fix_commit: 4954f79ad2e38e4198af301bf52c3562af39d482
+fix_date: '2016-11-23'
+project: extractfix-coreutils
+sanitizer: AddressSanitizer
+tag: 68c5eec-negative_size_param

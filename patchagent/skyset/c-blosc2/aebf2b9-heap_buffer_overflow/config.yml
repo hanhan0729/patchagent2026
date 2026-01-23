@@ -1,0 +1,5 @@
+fix_commit: 98bb9e682481b934f65db1bbd73bc2c3a41f2931
+fix_date: '2021-01-25'
+project: c-blosc2
+sanitizer: AddressSanitizer
+tag: aebf2b9-heap_buffer_overflow

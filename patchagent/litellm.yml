@@ -1,0 +1,71 @@
+model_list:
+  - model_name: gpt-3.5
+    litellm_params:
+      model: openai/gpt-3.5-turbo
+      api_key: "os.environ/OPENAI_API_KEY"
+  - model_name: oai-gpt-4o
+    litellm_params:
+      model: openai/gpt-4o
+      api_key: "os.environ/OPENAI_API_KEY"
+  - model_name: gpt-4o-mini
+    litellm_params:
+      model: openai/gpt-4o-mini-2024-07-18
+      api_key: "os.environ/OPENAI_API_KEY"
+  - model_name: gpt-4o
+    litellm_params:
+      model: openai/gpt-4o
+      api_key: "os.environ/OPENAI_API_KEY"
+  - model_name: gpt-4-turbo
+    litellm_params:
+      model: openai/gpt-4-0125-preview
+      api_key: "os.environ/OPENAI_API_KEY"
+  - model_name: claude-3.5-sonnet
+    litellm_params:
+      model: anthropic/claude-3-5-sonnet-20240620
+      api_key: "os.environ/ANTHROPIC_API_KEY"
+  - model_name: claude-3-opus
+    litellm_params:
+      model: anthropic/claude-3-opus-20240229
+      api_key: "os.environ/ANTHROPIC_API_KEY"
+  - model_name: claude-3-sonnet
+    litellm_params:
+      model: anthropic/claude-3-sonnet-20240229
+      api_key: "os.environ/ANTHROPIC_API_KEY"
+  - model_name: claude-3-haiku
+    litellm_params:
+      model: anthropic/claude-3-haiku-20240307
+      api_key: "os.environ/ANTHROPIC_API_KEY"
+  - model_name: claude-3-opus-backup
+    litellm_params:
+      model: anthropic/claude-3-opus-20240229
+      api_key: "os.environ/ANTHROPIC_API_BACKUP_KEY"
+  - model_name: claude-3-sonnet-backup
+    litellm_params:
+      model: anthropic/claude-3-sonnet-20240229
+      api_key: "os.environ/ANTHROPIC_API_BACKUP_KEY"
+  - model_name: claude-3-haiku-backup
+    litellm_params:
+      model: anthropic/claude-3-haiku-20240307
+      api_key: "os.environ/ANTHROPIC_API_BACKUP_KEY"
+  - model_name: qwen-turbo
+    litellm_params:
+      model: openai/qwen-turbo
+      api_key: "os.environ/QWEN_API_KEY"
+      api_base: "os.environ/QWEN_API_BASE"
+  - model_name: qwen-plus
+    litellm_params:
+      model: openai/qwen-plus
+      api_key: "os.environ/QWEN_API_KEY"
+      api_base: "os.environ/QWEN_API_BASE"
+  - model_name: qwen-max
+    litellm_params:
+      model: openai/qwen-max
+      api_key: "os.environ/QWEN_API_KEY"
+      api_base: "os.environ/QWEN_API_BASE"
+
+litellm_settings:
+  drop_params: True
+
+general_settings:
+  master_key: "os.environ/LITELLM_MASTER_KEY"
+  database_url: "postgresql://root:root@postgres:5432/litellm"

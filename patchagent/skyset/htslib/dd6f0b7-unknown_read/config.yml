@@ -1,0 +1,5 @@
+fix_commit: 92ea05adb2478c64be571aff6fe00130fd29c252
+fix_date: '2019-10-15'
+project: htslib
+sanitizer: AddressSanitizer
+tag: dd6f0b7-unknown_read

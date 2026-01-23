@@ -1,0 +1,5 @@
+fix_commit: 61aae4f319ac801ead90d789cbd7f7e3f2efd133
+fix_date: '2021-01-30'
+project: c-blosc2
+sanitizer: AddressSanitizer
+tag: cb15f1b-unknown_read

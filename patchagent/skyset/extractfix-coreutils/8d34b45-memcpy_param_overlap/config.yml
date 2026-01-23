@@ -1,0 +1,5 @@
+fix_commit: f4570a9ed6a4a3d9698093d5c9388c59d454d1dd
+fix_date: '2017-04-17'
+project: extractfix-coreutils
+sanitizer: AddressSanitizer
+tag: 8d34b45-memcpy_param-overlap

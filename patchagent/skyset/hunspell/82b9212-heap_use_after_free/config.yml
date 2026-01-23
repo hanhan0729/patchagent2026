@@ -1,0 +1,5 @@
+fix_commit: c6d900cfd5d10c428008dc40f804b9d9319cec87
+fix_date: '2023-03-07'
+project: hunspell
+sanitizer: AddressSanitizer
+tag: 82b9212-heap_use_after_free

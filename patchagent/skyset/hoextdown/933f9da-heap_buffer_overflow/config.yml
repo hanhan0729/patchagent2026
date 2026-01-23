@@ -1,0 +1,5 @@
+fix_commit: 7c7dc6ac9adce5413ab54dcd604db95a9b935b05
+fix_date: '2020-06-29'
+project: hoextdown
+sanitizer: AddressSanitizer
+tag: 933f9da-heap_buffer_overflow

@@ -1,0 +1,5 @@
+fix_commit: 0677b26b6d15f35f027eaabf11cfaa0af541f8c8
+fix_date: '2022-01-07'
+project: zstd
+sanitizer: AddressSanitizer
+tag: 2fabd37-global_buffer_overflow
