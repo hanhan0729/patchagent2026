@@ -387,3 +387,43 @@ root@iZ2zefom2mse9ft7yzjfvwZ:~/workspace# cd /root/workspace && python3 test_mon
 ✅ 测试全部通过！
 [2026-01-23 16:45:48] Releasing all LSP servers
 root@iZ2zefom2mse9ft7yzjfvwZ:~/workspace# 
+
+
+0127更新记录————————————————————————————————https://docs.litellm.ai/docs/providers
+
+用 Dashscope 的前缀：`dashscope/`。[(1)](https://docs.litellm.ai/docs/providers/dashscope)
+
+你这个 `model_name: qwen-turbo` 对应的 `litellm_params.model` 应该写成 `dashscope/qwen-turbo`。[(1)](https://docs.litellm.ai/docs/providers/dashscope)
+
+示例（这是文档里的原样用法）：  
+```python
+response = completion(  
+    model="dashscope/qwen-turbo",   
+    messages=[  
+       {"role": "user", "content": "hello from litellm"}  
+   ],  
+)  
+```
+[(1)](https://docs.litellm.ai/docs/providers/dashscope)
+
+修改完成————前缀加上：dashscope/——————是litellm的使用方法
+root@iZ2zefom2mse9ft7yzjfvwZ:~/workspace# python3 test_qwen_integration.py 
+=== Qwen API集成测试 ===
+测试LiteLLM配置...
+✓ 环境变量配置正确
+
+测试Qwen模型可用性...
+  测试模型: dashscope/qwen-turbo
+    ✓ 模型 dashscope/qwen-turbo 响应成功
+  测试模型: dashscope/qwen-plus
+    ✓ 模型 dashscope/qwen-plus 响应成功
+  测试模型: dashscope/qwen-max
+    ✓ 模型 dashscope/qwen-max 响应成功
+
+=== 测试完成 ===
+Qwen API集成配置成功！
+
+
+结果要存储到results文件夹中，运行一遍已经能看到结果
+/root/workspace/patchagent/results/hunspell-74b08bf-heap_buffer_overflow_a.json
+之后分析一下结果！！！！！
