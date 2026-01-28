@@ -5,9 +5,9 @@ client = ZhipuAiClient(api_key="226685ffd0944b179a9619c791c3d5da.ZH1jRUfkvPYwjhv
 response = client.chat.completions.create(
     model="glm-4.7-flash",
     messages=[
-        {"role": "user", "content": "作为一名营销专家，请为我的产品创作一个吸引人的口号"},
-        {"role": "assistant", "content": "当然，要创作一个吸引人的口号，请告诉我一些关于您产品的信息"},
-        {"role": "user", "content": "智谱AI开放平台"}
+        {"role": "user", "content": "给我介绍一下京东"},
+        # {"role": "assistant", "content": "当然，要创作一个吸引人的口号，请告诉我一些关于您产品的信息"},
+        # {"role": "user", "content": "智谱AI开放平台"}
         ],
     thinking={
         "type": "enabled",    # 启用深度思考模式
